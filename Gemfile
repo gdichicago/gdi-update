@@ -8,4 +8,5 @@ gem 'rack-test'
 group :test do
   gem 'shoulda-matchers'
   gem 'rspec'
+  gem 'capybara'
 end
