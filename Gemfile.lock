@@ -15,7 +15,9 @@ GEM
       xpath (~> 2.0)
     coderay (1.1.0)
     diff-lcs (1.2.5)
+    dotenv (2.0.2)
     i18n (0.7.0)
+    meetup_client (0.0.8)
     method_source (0.8.2)
     mime-types (1.25.1)
     mini_portile (0.5.2)
@@ -59,6 +61,8 @@ PLATFORMS
 
 DEPENDENCIES
   capybara
+  dotenv
+  meetup_client
   pry
   rack-test
   rake

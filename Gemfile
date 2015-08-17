@@ -4,6 +4,8 @@ gem 'pry'
 gem 'sinatra'
 gem 'rake'
 gem 'rack-test'
+gem 'meetup_client'
+gem 'dotenv'
 
 group :test do
   gem 'shoulda-matchers'

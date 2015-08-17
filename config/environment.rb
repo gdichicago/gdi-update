@@ -7,11 +7,14 @@ require 'bundler/setup' if File.exists?(ENV['BUNDLE_GEMFILE'])
 
 # Require gems we care about
 require 'rubygems'
-
-require 'uri'
 require 'pathname'
-
 require 'sinatra'
+
+require 'dotenv'
+Dotenv.load
+
+require 'meetup_client'
+require 'net/http'
 
 # Some helper constants for path-centric logic
 APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))
@@ -29,3 +32,8 @@ end
 # Set up the controllers and helpers
 Dir[APP_ROOT.join('app', 'controllers', '*.rb')].each { |file| require file }
 Dir[APP_ROOT.join('app', 'models', '*.rb')].each { |file| require file }
+
+# Set up Meetup
+MeetupClient.configure do |config|
+  config.api_key = ENV['MEETUP_API_KEY']
+end
