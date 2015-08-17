@@ -2,11 +2,7 @@ get '/' do
   erb :index
 end
 
-get '/newsletter' do
-  @newsletter = params[:newsletter]
-  erb :newsletter
-end
-
 post '/newsletter' do
-  redirect "/newsletter"
+  @newsletter = NewsletterGenerator.new(params).newsletter
+  erb(:newsletter)
 end
